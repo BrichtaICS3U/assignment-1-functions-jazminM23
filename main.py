@@ -4,9 +4,9 @@
 # March 28, 2018
 
 #uncomment this when you are ready to work on it
-def CtoF (celcius):
-    """Convert a given celcius temperature to its equivalent farenheit temperature."""
-    f=(1.8)*celcius+32
+def CtoF (celsius):
+    """Convert a given celsius temperature to its equivalent farenheit temperature."""
+    f=(1.8)*celsius+32
     return int(round(f))
 
 
@@ -15,11 +15,17 @@ def FtoC (farenheit):
     c=(0.55556)*(farenheit-32)
     return int(round(c))
 
-conversion = int(input('Would you like to convert 1) Celcius to Farenheit, or 2) Farenheit to celcius?: '))
+conversion = int(input('Would you like to convert 1) Celsius to Farenheit, or 2) Farenheit to celsius?: '))
 if conversion == 1:
     temperature = int(input('Enter your temperature in Celsius: '))
-    print(CtoF(temperature))
+    if temperature <-273:
+        print ('Invalid temperature: It is impossible to have a temperature below -273 Celsius.')
+    else:
+        print(CtoF(temperature))
 else:
     temperature = int(input('Enter your temperature in Farenheit: '))
-    print(FtoC(temperature))
+    if temperature <-460:
+        print('Invalid temperature: It is impossible to have a temperature below -460 Farenheit.')
+    else:
+        print(FtoC(temperature))
     
